@@ -1,8 +1,10 @@
 package polymorphism;
 
-public class Warrior extends Karakter{
+public class Warrior extends Karakter {
     @Override
-    protected void serang() {
+    public void serang() {
         System.out.println("Warrior menyerang dengan pedang!");
     }
+
+    
 }
