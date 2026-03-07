@@ -1,5 +1,5 @@
 package inter;
 
-public interface  Maintenance {
+public interface Maintenance {
     boolean isMaintenance();
 }
