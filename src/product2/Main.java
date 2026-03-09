@@ -6,13 +6,9 @@ public class Main {
         Produk p1 = new Produk("P01", "Laptop");
         Produk p2 = new Produk("P01", "Laptop");
 
-        if (p1.equals(p2)) {
-            System.out.println("Produk sama");
-        } else {
-            System.out.println("Produk berbeda");
-        }
-
-        String satu = "10";
-        System.out.println(satu.hashCode());
+        System.out.println(p1.equals(p2));
+        System.out.println(p1.hashCode() == p2.hashCode());
+        System.out.println(p1.hashCode());
+        System.out.println(p2.hashCode());
     }
 }
