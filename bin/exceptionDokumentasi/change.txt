@@ -1,0 +1,42 @@
+// CARA 1 DALAM PENANGANAN EXCEPTION
+// Siswa.java
+public class Siswa {
+    private String nama;
+    private int nilai;
+
+    public Siswa(String nama, int nilai) {
+        this.nama = nama;
+        this.nilai = nilai; // tidak ada validasi disini!
+    }
+
+    public String getNama() { return nama; }
+    public int getNilai() { return nilai; }
+}
+
+// ValidasiNilai.java
+public class ValidasiNilai {
+    public void validateNilai(int nilai) throws ValidateException {
+        if (nilai < 0 || nilai > 100) {
+            throw new ValidateException(
+                "Nilai tidak valid! Input kamu : " + nilai
+            );
+        }
+        System.out.println("Nilai " + nilai + " valid! ✅");
+    }
+}
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        Siswa siswa1 = new Siswa("Budi", 85);
+        Siswa siswa2 = new Siswa("Sari", 150); // object tetap terbuat!
+
+        ValidasiNilai validasi = new ValidasiNilai();
+
+        try {
+            validasi.validateNilai(siswa1.getNilai()); // ambil dari getter
+            validasi.validateNilai(siswa2.getNilai()); // ambil dari getter
+        } catch (ValidateException e) {
+            System.out.println("❌ " + e.getMessage());
+        }
+    }
+}
