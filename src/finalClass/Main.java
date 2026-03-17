@@ -1,5 +1,8 @@
 package finalClass;
 
+import annotation.Fancy;
+
+@Fancy(name = "fuady", tags = { "adi", "iwan", "lia" })
 public class Main {
     public static void main(String[] args) {
         Lingkaran lingkaran1 = new Lingkaran(7.0);
